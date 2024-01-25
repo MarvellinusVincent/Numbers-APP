@@ -15,10 +15,13 @@
         <label id="sum"></label>
     </section>
     <script>
-        function add() {
+        async function add() {
             let operand1input = document.getElementById("operand1");
             let operand2input = document.getElementById("operand2");
-            let sum = Number(operand1input.value) + Number(operand2input.value);
+            let n = operand1input.value;
+            let m = operand2input.value;
+            const response = await fetch("http://localhost:3000/add/" + n + "/" + m);
+            const sum = await response.json();
             document.getElementById("sum").innerText = sum;
         }
     </script>
