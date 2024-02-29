@@ -68,7 +68,7 @@
             document.getElementById("primeCheckResult").innerText = result;
         }
         async function cipher() {
-            const cipherCheck = document.getElementById("textToCipher")
+            const cipherCheck = document.getElementById("textCaesar")
             let plainText = cipherCheck.value
             const response = await fetch("https://ciphers-service-marvellinusvincent.onrender.com/ciphers/caesar/" + plainText + "3");
             const result = await response.json();
